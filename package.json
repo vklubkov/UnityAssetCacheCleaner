@@ -1,0 +1,13 @@
+{
+  "name": "com.vladimirklubkov.assetremover",
+  "version": "1.0.0",
+  "displayName": "Asset Remover",
+  "description": "Remove downloaded Unity Asset Store assets from your drive without leaving Unity Editor",
+  "license": "MIT",
+  "licensesUrl": "https://github.com/marked-one/AssetRemover?tab=MIT-1-ov-file",
+  "documentationUrl": "https://github.com/marked-one/AssetRemover",
+  "author": {
+    "name": "Vladimir Klubkov",
+    "url": "https://github.com/marked-one"
+  }
+}
