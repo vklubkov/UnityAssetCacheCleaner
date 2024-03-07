@@ -4,11 +4,12 @@ Remove downloaded Unity Asset Store assets from your drive without leaving Unity
 
 ![Screenshot](.github/screenshot.png)
 
-## Installation
-
 _Note: not tested on Mac OS X._
 
 _Note: may not work well with large collection of assets._
+
+
+## Installation
 
 Via Package Manager: `https://github.com/marked-one/AssetRemover.git`
 
@@ -21,7 +22,7 @@ Or you can simply copy the `AssetRemoverWindow.cs` file into your project.
 
 Open the Asset Remover window via `Tools/Asset Remover`.
 
-You should probably also open the Package Manager window alongside the Asset Remove, like in the screenshot above. In Package Manager window, switch to `My Asssets` and use `Filters` to set `Status->Downloaded`. 
+You should probably also open the Package Manager window alongside the Asset Remover, like in the screenshot above. In Package Manager window, switch to `My Asssets` and use `Filters` to set `Status->Downloaded`. 
 
 If needed, change the `Asset Store Cache path` to the real path to the Asset Store cache folder and then press the `Update Asset List from path` button.
 
