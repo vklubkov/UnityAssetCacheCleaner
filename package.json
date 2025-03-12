@@ -1,13 +1,13 @@
 {
-  "name": "com.vladimirklubkov.assetremover",
-  "version": "1.0.0",
-  "displayName": "Asset Remover",
-  "description": "Remove downloaded Unity Asset Store assets from your drive without leaving Unity Editor",
+  "name": "com.vklubkov.assetcacheremover",
+  "version": "1.1.0",
+  "displayName": "Asset Cache Remover",
+  "description": "Remove Unity Asset Store cache from your drive without leaving Unity Editor",
   "license": "MIT",
-  "licensesUrl": "https://github.com/marked-one/AssetRemover?tab=MIT-1-ov-file",
-  "documentationUrl": "https://github.com/marked-one/AssetRemover",
+  "licensesUrl": "https://github.com/vklubkov/UnityAssetCacheRemover?tab=MIT-1-ov-file",
+  "documentationUrl": "https://github.com/vklubkov/UnityAssetCacheRemover",
   "author": {
     "name": "Vladimir Klubkov",
-    "url": "https://github.com/marked-one"
+    "url": "https://github.com/vklubkov"
   }
 }

@@ -1,3 +1,5 @@
+#if UNITY_EDITOR
+
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -5,19 +7,19 @@ using System.Linq;
 using UnityEditor;
 using UnityEngine;
 
-namespace AssetRemover {
-    internal class AssetRemoverWindow : EditorWindow {
-        const string _editorPrefsAssetStoreCachePathKey = "AssetRemover_AssetStoreCachePath";
+namespace AssetCacheRemover {
+    internal class AssetCacheRemoverWindow : EditorWindow {
+        const string _editorPrefsAssetStoreCachePathKey = "AssetCacheRemover_AssetStoreCachePath";
 
         string _cachePath = string.Empty;
         readonly SortedList<string, (string Publisher, string Path)> _assets = new();
         Vector2 _scrollPosition = Vector2.zero;
 
-        [MenuItem("Tools/Asset Remover")]
+        [MenuItem("Tools/Asset Cache Remover")]
         static void ShowWindow() {
-            var window = GetWindow<AssetRemoverWindow>();
+            var window = GetWindow<AssetCacheRemoverWindow>();
             window.minSize = new Vector2(500, 600);
-            window.titleContent = new GUIContent("Asset Remover");
+            window.titleContent = new GUIContent("Asset Cache Remover");
             window.UpdateAssetStoreCachePath();
             window.UpdatePackagesList();
         }
@@ -32,7 +34,8 @@ namespace AssetRemover {
             _cachePath = Path.Combine(appData, "Unity", "Asset Store-5.x");
 #elif UNITY_EDITOR_OSX
             // NOTE: not tested on OS X!
-            _cachePath = "~/Library/Unity/Asset Store-5.x";
+            var userProfile = Environment.GetFolderPath(Environment.SpecialFolder.UserProfile);
+            _cachePath = Path.Combine(userProfile, "Library/Unity/Asset Store-5.x");
 #elif UNITY_EDITOR_LINUX
             var userProfile = Environment.GetFolderPath(Environment.SpecialFolder.UserProfile);
             _cachePath = Path.Combine(userProfile, ".local/share/unity3d/Asset Store-5.x");
@@ -64,7 +67,7 @@ namespace AssetRemover {
             EditorGUILayout.BeginVertical();
 
             _cachePath = EditorGUILayout.TextField("Asset Store Cache path", _cachePath);
-            if (GUILayout.Button("Update Asset List from path")) {
+            if (GUILayout.Button("Refresh")) {
                 _assets.Clear();
                 _scrollPosition = Vector2.zero;
                 EditorPrefs.SetString(_editorPrefsAssetStoreCachePathKey, _cachePath);
@@ -92,3 +95,5 @@ namespace AssetRemover {
         }
     }
 }
+
+#endif

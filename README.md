@@ -1,32 +1,32 @@
-# Asset Remover for Unity
+# Asset Cache Remover for Unity
 
-Remove downloaded Unity Asset Store assets from your drive without leaving Unity Editor
+Remove Unity Asset Store cache from your drive without leaving Unity Editor
 
 ![Screenshot](.github/screenshot.png)
 
 _Note: not tested on Mac OS X._
 
-_Note: may not work well with large collection of assets._
+_Note: may not work well with extremely large collections of assets._
 
 
 ## Installation
 
-Via Package Manager: `https://github.com/marked-one/AssetRemover.git`
+Via Package Manager: `https://github.com/vklubkov/UnityAssetCacheRemover.git`
 
-Using version: `https://github.com/marked-one/AssetRemover.git#1.0.0`
+Using version: `https://github.com/vklubkov/UnityAssetCacheRemover.git#1.1.0`
 
-Or you can simply copy the `AssetRemoverWindow.cs` file into your project.
+Or you can simply copy the `AssetCacheRemoverWindow.cs` file into your project.
 
 
 ## Usage
 
-Open the Asset Remover window via `Tools/Asset Remover`.
+Open the Asset Cache Remover window via `Tools/Asset Cache Remover`.
 
-You should probably also open the Package Manager window alongside the Asset Remover, like in the screenshot above. In Package Manager window, switch to `My Asssets` and use `Filters` to set `Status->Downloaded`. 
+Just like in the screenshot above, you should probably also open the Package Manager window alongside the Asset Cache Remover. In Package Manager window, switch to `My Asssets` and use `Filters` to set `Status->Downloaded`. 
 
-If needed, change the `Asset Store Cache path` to the real path to the Asset Store cache folder and then press the `Update Asset List from path` button.
+Use the `Asset Store Cache path` setting to specify a custom path to the Asset Store cache folder and then press the `Refresh` button.
 
-Use the `Remove` buttons to remove assets. Asset is immediately removed from the drive.
+Use the `Remove` buttons to remove an asset from the drive.
 
 
 ## License
@@ -35,7 +35,7 @@ Use the `Remove` buttons to remove assets. Asset is immediately removed from the
 
 > MIT License
 >
-> Copyright (c) 2024 Vladimir Klubkov
+> Copyright (c) 2024-2025 Vladimir Klubkov
 >
 > Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal

@@ -1,5 +1,5 @@
 {
-  "name": "VladimirKlubkov.AssetCreator",
+  "name": "AssetCacheRemover",
   "rootNamespace": "",
   "references": [],
   "includePlatforms": [
