@@ -1,5 +1,5 @@
 {
-  "name": "AssetCacheRemover",
+  "name": "AssetCacheCleaner",
   "rootNamespace": "",
   "references": [],
   "includePlatforms": [

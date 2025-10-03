@@ -1,11 +1,11 @@
 {
-  "name": "com.vklubkov.assetcacheremover",
-  "version": "1.1.0",
-  "displayName": "Asset Cache Remover",
-  "description": "Remove Unity Asset Store cache from your drive without leaving Unity Editor",
+  "name": "com.vklubkov.assetcachecleaner",
+  "version": "1.2.0",
+  "displayName": "Asset Cache Cleaner",
+  "description": "Clean Unity Asset Store cache to free up disk space without leaving the Editor.",
   "license": "MIT",
-  "licensesUrl": "https://github.com/vklubkov/UnityAssetCacheRemover?tab=MIT-1-ov-file",
-  "documentationUrl": "https://github.com/vklubkov/UnityAssetCacheRemover",
+  "licensesUrl": "https://github.com/vklubkov/UnityAssetCacheCleaner?tab=MIT-1-ov-file",
+  "documentationUrl": "https://github.com/vklubkov/UnityAssetCacheCleaner",
   "author": {
     "name": "Vladimir Klubkov",
     "url": "https://github.com/vklubkov"

@@ -1,33 +1,36 @@
-# Asset Cache Remover for Unity
+# Asset Cache Cleaner for Unity
 
-Remove Unity Asset Store cache from your drive without leaving Unity Editor
+![Logo](.github/AssetCacheCleaner.png)
 
-![Screenshot](.github/screenshot.png)
+Clean Unity Asset Store cache to free up disk space without leaving the Editor.
 
-_Note: not tested on Mac OS X._
-
-_Note: may not work well with extremely large collections of assets._
+![Screenshot](.github/Screenshot.png)
 
 
 ## Installation
 
-Via Package Manager: `https://github.com/vklubkov/UnityAssetCacheRemover.git`
+Via Package Manager: 
 
-Using version: `https://github.com/vklubkov/UnityAssetCacheRemover.git#1.1.0`
-
-Or you can simply copy the `AssetCacheRemoverWindow.cs` file into your project.
+- HTTPS: `https://github.com/vklubkov/UnityAssetCacheCleaner.git`
+- SSH: `git@github.com:vklubkov/UnityAssetCacheCleaner.git`
 
 
 ## Usage
 
-Open the Asset Cache Remover window via `Tools/Asset Cache Remover`.
+Open the Asset Cache Cleaner window via `Tools/Asset Cache Cleaner`.
 
-Just like in the screenshot above, you should probably also open the Package Manager window alongside the Asset Cache Remover. In Package Manager window, switch to `My Asssets` and use `Filters` to set `Status->Downloaded`. 
+Use a `Remove` button to remove an asset.
 
-Use the `Asset Store Cache path` setting to specify a custom path to the Asset Store cache folder and then press the `Refresh` button.
+Use the `Asset Store Cache path` setting to specify a custom path to the Asset Store cache folder.
 
-Use the `Remove` buttons to remove an asset from the drive.
+Use `Refresh` button to update the list of assets.
 
+
+## AI use disclosure
+
+- AI was used to generate the logo image.
+- Some phrasing in this README was improved by AI.
+- Some phrasing in the Asset Cache Cleaner UI was improved by AI.
 
 ## License
 
