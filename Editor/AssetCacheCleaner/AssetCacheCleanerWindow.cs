@@ -14,6 +14,8 @@ namespace AssetCacheCleaner {
         const string _editorPrefsShowConfirmationPathKey = "AssetCacheCleaner_ShowConfirmation";
         const string _editorPrefsShowBannerPathKey = "AssetCacheCleaner_ShowBanner";
 
+        static readonly GUILayoutOption[] _expandWidth = { GUILayout.ExpandWidth(true) };
+
         string _cachePath = string.Empty;
         bool _showConfirmation = true;
         bool _showBanner = true;
@@ -25,7 +27,7 @@ namespace AssetCacheCleaner {
         [MenuItem("Tools/Asset Cache Cleaner")]
         static void ShowWindow() {
             var window = GetWindow<AssetCacheCleanerWindow>();
-            window.minSize = new Vector2(600, 200);
+            window.minSize = new Vector2(600, 400);
             window.titleContent = new GUIContent("Asset Cache Cleaner");
             window.UpdateAssetStoreCachePath();
             window.UpdateShowConfirmation();
@@ -81,7 +83,13 @@ namespace AssetCacheCleaner {
             else if (!_showBanner && _banner != null)
                 _banner = null;
 
-            CustomGUILayout.Image(_banner);
+            if (_banner != null) {
+                EditorGUILayout.Space();
+                var textureAspect = (float)_banner.width / _banner.height;
+                var textureRect = GUILayoutUtility.GetAspectRect(textureAspect, _expandWidth);
+                EditorGUI.DrawPreviewTexture(textureRect, _banner);
+                EditorGUILayout.Space();
+            }
 
             EditorGUILayout.Space();
             EditorGUILayout.BeginVertical();
