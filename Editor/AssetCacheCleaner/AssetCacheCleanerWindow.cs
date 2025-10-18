@@ -1,5 +1,3 @@
-#if UNITY_EDITOR
-
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -9,14 +7,20 @@ using UnityEngine;
 
 namespace AssetCacheCleaner {
     internal class AssetCacheCleanerWindow : EditorWindow {
+        const string _bannerPath =
+            "Packages/com.vklubkov.assetcachecleaner/Editor Resources/Banner.png";
+
         const string _editorPrefsAssetStoreCachePathKey = "AssetCacheCleaner_AssetStoreCachePath";
-        const string _editorPreShowConfirmationPathKey = "AssetCacheCleaner_ShowConfirmation";
+        const string _editorPrefsShowConfirmationPathKey = "AssetCacheCleaner_ShowConfirmation";
+        const string _editorPrefsShowBannerPathKey = "AssetCacheCleaner_ShowBanner";
 
         string _cachePath = string.Empty;
         bool _showConfirmation = true;
+        bool _showBanner = true;
 
         readonly SortedList<string, (string Publisher, string Path)> _assets = new();
         Vector2 _scrollPosition = Vector2.zero;
+        Texture2D _banner;
 
         [MenuItem("Tools/Asset Cache Cleaner")]
         static void ShowWindow() {
@@ -37,7 +41,6 @@ namespace AssetCacheCleaner {
             var appData = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
             _cachePath = Path.Combine(appData, "Unity", "Asset Store-5.x");
 #elif UNITY_EDITOR_OSX
-            // NOTE: not tested on OS X!
             var userProfile = Environment.GetFolderPath(Environment.SpecialFolder.UserProfile);
             _cachePath = Path.Combine(userProfile, "Library/Unity/Asset Store-5.x");
 #elif UNITY_EDITOR_LINUX
@@ -46,8 +49,10 @@ namespace AssetCacheCleaner {
 #endif
         }
 
-        void UpdateShowConfirmation() =>
-            _showConfirmation = EditorPrefs.GetBool(_editorPreShowConfirmationPathKey, true);
+        void UpdateShowConfirmation() {
+            _showConfirmation = EditorPrefs.GetBool(_editorPrefsShowConfirmationPathKey, true);
+            _showBanner = EditorPrefs.GetBool(_editorPrefsShowBannerPathKey, true);
+        }
 
         void UpdatePackagesList() {
             if (!Directory.Exists(_cachePath))
@@ -71,7 +76,14 @@ namespace AssetCacheCleaner {
         }
 
         void OnGUI() {
-            EditorGUILayout.Space(15);
+            if (_showBanner && _banner == null)
+                _banner = AssetDatabase.LoadAssetAtPath<Texture2D>(_bannerPath);
+            else if (!_showBanner && _banner != null)
+                _banner = null;
+
+            CustomGUILayout.Image(_banner);
+
+            EditorGUILayout.Space();
             EditorGUILayout.BeginVertical();
 
             _cachePath = EditorGUILayout.TextField("Asset Store Cache path", _cachePath);
@@ -82,15 +94,24 @@ namespace AssetCacheCleaner {
                 UpdatePackagesList();
             }
 
+            EditorGUILayout.Space(3);
+
+            var newShowBanner = GUILayout.Toggle(_showBanner, "Show banner");
+            if (newShowBanner != _showBanner) {
+                _showBanner = newShowBanner;
+                EditorPrefs.SetBool(_editorPrefsShowBannerPathKey, _showBanner);
+            }
+
             var newShowConfirmation = GUILayout.Toggle(_showConfirmation, "Show confirmation dialog");
             if (newShowConfirmation != _showConfirmation) {
                 _showConfirmation = newShowConfirmation;
-                EditorPrefs.SetBool(_editorPreShowConfirmationPathKey, _showConfirmation);
+                EditorPrefs.SetBool(_editorPrefsShowConfirmationPathKey, _showConfirmation);
             }
 
             EditorGUILayout.EndVertical();
 
-            EditorGUILayout.Space(15);
+            EditorGUILayout.Space();
+            EditorGUILayout.Space();
             _scrollPosition = EditorGUILayout.BeginScrollView(_scrollPosition);
 
             foreach (var (key, value) in _assets.ToList()) {
@@ -120,5 +141,3 @@ namespace AssetCacheCleaner {
         }
     }
 }
-
-#endif

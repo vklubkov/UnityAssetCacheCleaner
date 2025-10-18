@@ -1,6 +1,6 @@
 {
   "name": "com.vklubkov.assetcachecleaner",
-  "version": "1.2.1",
+  "version": "1.2.2",
   "displayName": "Asset Cache Cleaner",
   "description": "Clean Unity Asset Store cache to free up disk space without leaving the Editor.",
   "license": "MIT",
