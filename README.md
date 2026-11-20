@@ -1,18 +1,19 @@
 # Asset Cache Cleaner for Unity
 
-![Logo](.github/AssetCacheCleaner.png)
+![Logo](.github/logo.png)
 
 Clean Unity Asset Store cache to free up disk space without leaving the Editor.
 
-![Screenshot](.github/Screenshot.png)
+![Screenshot](.github/screenshot.png)
 
 
 ## Installation
 
-Via Package Manager: 
-
-- HTTPS: `https://github.com/vklubkov/UnityAssetCacheCleaner.git`
-- SSH: `git@github.com:vklubkov/UnityAssetCacheCleaner.git`
+1. Press the green button with the `<> Code`label above.
+2. From there, copy the HTTPS URL of this repository (the one that you would use for cloning the repo).
+3. In Unity, open the Package Manager.
+4. Click the `+` button and select `Install package from git URL...`
+5. Paste the URL and install the package.
 
 
 ## Usage
@@ -28,32 +29,35 @@ Use `Refresh` button to update the list of assets.
 
 ## AI use disclosure
 
-- AI was used to generate the logo image.
+- AI was used to generate the logo image you see above.
+- AI was used for initial conversion from IMGUI to UI Toolkit. It was then manually refactored.
 - Some phrasing in this README was improved by AI.
 - Some phrasing in the Asset Cache Cleaner UI was improved by AI.
 
 ## License
 
-[MIT license](LICENSE.md)
+[MIT](LICENSE.md)
 
-> MIT License
->
-> Copyright (c) 2024-2025 Vladimir Klubkov
->
-> Permission is hereby granted, free of charge, to any person obtaining a copy
+```
+MIT License
+
+Copyright (c) 2024-2026 Vladimir Klubkov
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
 in the Software without restriction, including without limitation the rights
 to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
 copies of the Software, and to permit persons to whom the Software is
 furnished to do so, subject to the following conditions:
->
-> The above copyright notice and this permission notice shall be included in all
+
+The above copyright notice and this permission notice shall be included in all
 copies or substantial portions of the Software.
->
-> THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
 IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
 FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
 AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
+```
